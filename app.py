@@ -6,7 +6,7 @@ from playsound import playsound
 
 try:
     while True:
-        q = wikipedia.search(str(input("Search Leafhopper: ")))
+        q = wikipedia.search(str(input("Search: ")))
         r = wikipedia.summary(q[0], sentences=0, chars=0, auto_suggest=False, redirect=False)
         s = BeautifulSoup(r, 'html.parser')
         pprint.pprint(q[0])
