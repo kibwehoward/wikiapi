@@ -2,7 +2,6 @@ import pprint
 import wikipedia
 from gtts import gTTS
 from bs4 import BeautifulSoup
-from playsound import playsound
 
 try:
     while True:
@@ -11,9 +10,6 @@ try:
         s = BeautifulSoup(r, 'html.parser')
         pprint.pprint(q[0])
         pprint.pprint(s.prettify().replace('\n', ''))
-        v = gTTS(str(s))
-        v.save('temp.mp3')
-        playsound('temp.mp3')
 
 except wikipedia.exceptions.DisambiguationError as error:
     print(error.options)
